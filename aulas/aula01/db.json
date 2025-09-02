@@ -1,0 +1,26 @@
+{
+  "contatos": [
+    {
+      "id": "7908",
+      "nome": "Diego",
+      "email": "diegoalves@iesb.br",
+      "Telefone": "61 991706411"
+    },
+    {
+      "id": "bd15",
+      "nome": "Maria",
+      "email": "mariazinha@iesb.br",
+      "Telefone": "61 9999-9999"
+    },
+    {
+      "id": "5375",
+      "nome": "João",
+      "email": "joao@iesb.br"
+    },
+    {
+      "id": "94f6",
+      "nome": "João",
+      "email": "joao@iesb.br"
+    }
+  ]
+}
