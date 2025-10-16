@@ -1,5 +1,12 @@
-function listar (req, res) {
-    return res.json({});
+const Tarefa = require('../models/tarefaModel');
+
+async function listar (req, res) {
+    try {
+    const tarefas = await Tarefa.find({});
+    return res.json(tarefas);
+    } catch(err) {
+        res.status(500).json({ msg: "Deu ruim:" + err.message9 });
+    }
 }
 
 
