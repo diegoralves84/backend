@@ -13,7 +13,7 @@ describe('Testes do recurso /tarefas', () => {
     test("POST / deve retornar 201", async () => {
         const response = await request.post(url).send({ nome: "Estudar"});
         expect(response.status).toBe(201);
-        id = response.body.id;
+        id = response.body._id;
     });
 
     test("GET / deve retornar 200", async () => {
