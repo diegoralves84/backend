@@ -19,20 +19,28 @@ async function criar (req, res) {
 
 
 async function buscar (req, res, next) {
-    const {id} = req.params;
-    const tarefaEncontrada = await Tarefa.findOne ({_id: id});
-    next();
+    const { id } = req.params;
+    const tarefaEncontrada = await Tarefa.findOne({ _id: id });
+    if (tarefaEncontrada) {
+        req.tarefa = tarefaEncontrada;
+        return next();
+  }
+  return res.status(404).json({msg: "Tarefa não encontrada"});
 }
 
 
 function exibir (req, res) {
-    return res.json({});
+    return res.json(req.tarefa);
 }
 
 
 async function atualizar (req, res) {
     const { id } = req.params;
-    const tarefaAtualizada = await Tarefa.findOneAndUpdate({_id:id}, {...req.body});
+    const tarefaAtualizada = await Tarefa.findOneAndUpdate(
+        {_id:id},
+        {...req.body},
+        { new: true}
+    );
     return res.json(tarefaAtualizada);
 }
 
